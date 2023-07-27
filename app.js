@@ -14,7 +14,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const mongoSanitize = require('express-mongo-sanitize');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const MongoStore = require('connect-mongo');
 
 // Routes
@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(mongoSanitize());
-app.use(helmet({ contentSecurityPolicy: false }));
+// app.use(helmet({ contentSecurityPolicy: false }));
 
 
 const secret = process.env.SECRET || 'weneedsomebettersecret'
